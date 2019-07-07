@@ -1,0 +1,16 @@
+{
+    "name": "My Chrome Extetion",
+    "description": "First google chrome extension using Angular",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": {                    
+          "16": "images/icon16.png",           
+          "24": "images/icon24.png",           
+          "32": "images/icon32.png"            
+        },
+        "default_title": "My Chrome Extetion",      
+        "default_popup": "index.html"        
+      },
+	  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
