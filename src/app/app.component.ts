@@ -36,6 +36,13 @@ export class AppComponent implements OnInit{
     this.updateStore();
   }
 
+  onDropHandled(event){
+    debugger
+    var data = event.dataTransfer.getData("text");
+    var element = document.getElementById(data);
+    event.target.appendChild(document.getElementById(data));
+  }
+
   updateStore(): any {
     window.localStorage.setItem("fighters", JSON.stringify(this.fighters));  
   }

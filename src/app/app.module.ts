@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { DragableDirective } from './directives/dragable.directive';
+import { DropableDirective } from './directives/dropable.directive';
+import { DragableElementComponent } from './components/dragable-element/dragable-element.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DragableDirective,
+    DropableDirective,
+    DragableElementComponent
   ],
   imports: [
     BrowserModule,
