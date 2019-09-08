@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { DragableDirective } from './directives/dragable.directive';
 import { DropableDirective } from './directives/dropable.directive';
 import { DragableElementComponent } from './components/dragable-element/dragable-element.component';
+import { UiVirtualScrollViewportResizeDirective } from './directives/virtual-scroll-viewport-resize.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DragableDirective,
     DropableDirective,
-    DragableElementComponent
+    DragableElementComponent,
+    UiVirtualScrollViewportResizeDirective
   ],
   imports: [
     BrowserModule,
