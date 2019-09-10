@@ -1,8 +1,8 @@
-import { VirtualScrollViewportResizeDirective } from './virtual-scroll-viewport-resize.directive';
+import { UiVirtualScrollViewportResizeDirective } from './virtual-scroll-viewport-resize.directive';
 
-describe('VirtualScrollViewportResizeDirective', () => {
+describe('UiVirtualScrollViewportResizeDirective', () => {
   it('should create an instance', () => {
-    const directive = new VirtualScrollViewportResizeDirective();
+    const directive = new UiVirtualScrollViewportResizeDirective(null,null);
     expect(directive).toBeTruthy();
   });
 });

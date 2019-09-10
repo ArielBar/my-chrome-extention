@@ -1,6 +1,6 @@
 
 
- import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { DOCUMENT } from '@angular/common';
 import {
     Directive,
@@ -19,7 +19,7 @@ import {
 import {
     debounceTime,
     delay,
-    takeUntil, 
+    takeUntil,
     tap,
 } from 'rxjs/operators';
 
@@ -62,7 +62,7 @@ export class UiVirtualScrollViewportResizeDirective implements OnInit, OnDestroy
      * @ignore
      */
     ngOnInit() {
-      debugger
+        debugger
         merge(
             fromEvent(this._document.defaultView!, 'resize')
                 .pipe(

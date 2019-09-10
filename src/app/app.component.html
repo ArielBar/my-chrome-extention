@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -22,4 +22,16 @@
 <div abDropable class="dropable" (dropHandled)="onDropHandled($event)"></div>
 <div abDropable class="dropable" (dropHandled)="onDropHandled($event)">
   <ab-dragable-element></ab-dragable-element> 
+</div> -->
+<div mwlTextInputHighlightContainer>
+  <textarea mwlTextInputElement rows="1" class="form-control" [(ngModel)]="text" #textarea (input)="addTags()">
+  </textarea>
+  <mwl-text-input-highlight [tags]="tags" [tagCssClass]="'bg-blue'" [textInputElement]="textarea"
+    (tagMouseEnter)="addDarkClass($event.target)" (tagMouseLeave)="removeDarkClass($event.target)"
+    (tagClick)="tagClicked = $event.tag">
+  </mwl-text-input-highlight>
+</div>
+<br>
+<div class="alert alert-info" *ngIf="tagClicked">
+  Tag clicked! {{ tagClicked.data }}
 </div>
