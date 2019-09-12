@@ -10,7 +10,7 @@ import { HighlightTag } from 'angular-text-input-highlight';
 
 })
 export class AppComponent implements OnInit {
-  text: string = 'Hello @mattlewis92 how are you today?\n\nLook I have a #different background color!\n\n@angular is pretty awesome!';
+  text: string = 'Hello @[גדשגדגש] how are you @[גשדגשגש] today?\n\nLook I have a #different background color!\n\n@angular is pretty awesome!';
 
   tags: HighlightTag[] = [];
 
@@ -22,7 +22,8 @@ export class AppComponent implements OnInit {
 
   addTags() {
     this.tags = [];
-    const matchMentions = /(@\w+) ?/g;
+    // const matchMentions = /(@\w+) ?/g;
+    const matchMentions = /(@\[[\u0590-\u05fe ]+\]) ?/g;
     let mention;
     // tslint:disable-next-line
     while ((mention = matchMentions.exec(this.text))) {
@@ -63,3 +64,28 @@ export class AppComponent implements OnInit {
     elm.classList.remove('bg-pink-dark');
   }
 }
+
+
+// @Effect()
+// add$: Observable<Action> = this.actions$
+//   .pipe(
+//     ofType(fromDataActions.DataActionTypes.Add),
+//     withLatestFrom(this.store, (action, state) => {
+//       return { state: state, action: action }
+//     }),
+//     switchMap((fromData) => {
+//       return this.service.addCustomer(fromData.action['payload']).pipe(
+//         map((addedCustomer: Customer) => {
+//           let customers: Array<Customer> = this.newMethod(fromData, addedCustomer);
+//           return new fromDataActions.AddSuccess(customers);
+//         }),
+//         catchError(error => of(new fromDataActions.LoadFail(error)))
+//       );
+//     })
+//   );
+// private newMethod(fromData: { state: CustomerState; action: never; }, addedCustomer: Customer) {
+//   let customers: Array<Customer> = cloneDeep(fromData.state.customers['data']['customers']);
+//   debugger;
+//   customers.push(addedCustomer);
+//   return customers;
+// }
